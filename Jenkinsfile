@@ -1,6 +1,13 @@
-Pipeline {
-  node any {
-    stage 'prepare'
-    echo "this is a new jenkins file for demo"
-  }
+pipeline {
+
+    agent {
+      node {
+        label 'docker'
+      }
+    }
+  
+    docker {
+      image 'hello-world'
+    }
+
 }
